@@ -1,0 +1,22 @@
+.cellImg{
+    margin-top:2px;
+}
+
+/*.cell:first-child{*/
+    /*border-left: 1px solid black;*/
+/*}*/
+.cell{
+    border: 1px solid black;
+    /*border-left: none;*/
+    display:inline-block;
+    background: white;
+    transition: 0.2s;
+    vertical-align: top;
+    user-select: none;
+}
+
+.cell:hover{
+    cursor: pointer;
+    background: lightgray;
+    transition: 0.2s;
+}
