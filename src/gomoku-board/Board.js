@@ -11,7 +11,7 @@ let Board = () => {
   let [message, setMessage] = useState("")
   let [userTurn, setUserTurn] = useGlobal("userTurn")
   let [cells, setCells] = useState(null)
-  let [cellValues, setCellValues] = useState(new Array(boardSize).fill(null).map(() => new Array(boardSize).fill(null)))
+  let [cellValues, setCellValues] = useState(null)
 
   // useEffect(() => {
   //   console.log("-->")
@@ -28,6 +28,8 @@ let Board = () => {
   }
 
   let initialiseCells = () => {
+    cellValues = new Array(boardSize).fill(null).map(() => new Array(boardSize).fill(null))
+    setCellValues(cellValues)
     setCells(new Array(boardSize).fill(null).reduce((acc, val, row_index) => {
       let cells = new Array(boardSize).fill(null).map((val, col_index) => <Cell key={1 ? Math.random() : col_index * boardSize + row_index} updateCellValue={updateCellValue} setBoardMessage={setMessage} row={row_index} col={col_index}/>)
       let currentRow = (
